@@ -11,7 +11,7 @@ app.use(cors())
 const PORT = process.env.PORT || 3001
 const uri = process.env.MONGODB_URI!
 
-const client = new MongoClient(uri)
+const client = new MongoClient(uri, { autoSelectFamily: false })
 let db: any
 
 client
